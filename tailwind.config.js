@@ -18,6 +18,6 @@ export default {
         fadeIn: "fadeIn 2s ease-in forwards",
       },
     },
-    plugins: [],
+    plugins: [require("daisyui")],
   },
 };

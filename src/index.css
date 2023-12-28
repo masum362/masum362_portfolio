@@ -5,4 +5,5 @@
 
 body{
     background-color:#25263A;
+    z-index: -20;
 }

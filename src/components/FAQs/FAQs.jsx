@@ -8,7 +8,7 @@ const FAQs = () => {
     const [faq3, setFaq3] = useState(false)
 
     return (
-        <div className=' w-full flex flex-col md:flex-row justify-center items-center text-white mt-64 md:mt-20 lg:mt-32 '>
+        <div id='faq' className=' w-full flex flex-col md:flex-row justify-center items-center text-white mt-64 md:mt-20 lg:mt-32 '>
             <div className='flex flex-col justify-center items-center w-full md:w-1/2 m-auto p-3'>
                 <div>
                     <img src="https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Why Choose Us Image" className='w-full lg:w-[70%] p-4 rounded-md object-contain m-auto blur-[1px]' />
