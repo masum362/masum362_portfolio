@@ -6,7 +6,7 @@ import { FaFacebook, FaSquareInstagram, FaSquareTwitter, FaYoutube } from 'react
 import { Cursor, Typewriter } from 'react-simple-typewriter';
 import Particls from '../../particles/Particles';
 import { Link } from 'react-router-dom';
-import pdf from "../../assets/masum's cv(full stack).pdf"
+import pdf from "../../assets/masum-resume.pdf"
 
 const Profile = () => {
 

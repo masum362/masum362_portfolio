@@ -37,16 +37,16 @@ const Projects = () => {
       desc: "MindLinker Social Media is your go-to platform for connecting with friends, sharing life's moments, and discovering new trends. With a user-friendly interface and intuitive features,like and comment on posts. MindLinker Social Media is where your digital social life comes to life!",
       img: item4,
       category: 'e commerce',
-      gihubLink:"https://github.com/masum362/MINDLINKER_social_media",
-      liveLink:"https://mindlinker.netlify.app/",
+      gihubLink: "https://github.com/masum362/MINDLINKER_social_media",
+      liveLink: "https://mindlinker.netlify.app/",
     },
     {
       id: 1,
       name: "Amazon Clone",
       desc: 'It includes user authentication for registration and login, product listings with details and categorization, a robust search function, and individual product pages displaying comprehensive information and customer reviews.awesome user interface that can attract users. ',
       img: item1,
-      gihubLink:"https://github.com/masum362/E_Commerce_Website_Amazon_clone",
-      liveLink:"https://amazon-clone-by-msquare.netlify.app",
+      gihubLink: "https://github.com/masum362/E_Commerce_Website_Amazon_clone",
+      liveLink: "https://amazon-clone-by-msquare.netlify.app",
       category: 'e commerce',
     },
 
@@ -55,8 +55,8 @@ const Projects = () => {
       name: "Amar Cokh",
       desc: 'Our platform delivers a curated selection of the latest news, offering a blend of local and global perspectives. From politics and technology to entertainment and health, we keep you up-to-date with insightful articles, expert analyses, and engaging multimedia content.',
       img: item2,
-      gihubLink:"https://github.com/masum362/News_blog",
-      liveLink:"https://news-paper-client.netlify.app",
+      gihubLink: "https://github.com/masum362/News_blog",
+      liveLink: "https://news-paper-client.netlify.app",
       category: 'e commerce',
     },
     {
@@ -64,12 +64,12 @@ const Projects = () => {
       name: "Nexcent Agency",
       desc: '  Our team of dedicated professionals is committed to delivering innovative solutions tailored to your unique needs. From concept to execution, we fuse creativity with strategic insight to elevate your brand and achieve extraordinary results',
       img: item3,
-      gihubLink:"https://github.com/masum362/NEXCENT-agency-website",
-      liveLink:"https://nexcent-agency-web.netlify.app",
+      gihubLink: "https://github.com/masum362/NEXCENT-agency-website",
+      liveLink: "https://nexcent-agency-web.netlify.app",
 
       category: 'e commerce',
     },
-   
+
 
   ]
 
@@ -79,7 +79,7 @@ const Projects = () => {
     <div id='projects' className='md:mt-[60%] lg:mt-[20%] text-white w-full flex flex-col gap-10 justify-center items-center text-center mb-2'>
       <div className='w-full p-2'>
         <h1 className='font-bold text-3xl p-2 '>Recent Projects</h1>
-        <p className='p-2 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, recusandae aspernatur. </p>
+        <p className='p-2 font-thin'>Revolutionizing Web Development: Introducing with my some of recent projects, where innovation meets excellence.</p>
       </div>
       <div className="projects mx-auto  gap-3 w-[100%] lg:w-[90%] text-center p-3 transition-all duration-300 ">
 
@@ -99,7 +99,7 @@ const Projects = () => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-        
+
           {
             Projects.map(project => {
               return <div>
@@ -113,8 +113,8 @@ const Projects = () => {
                     </a>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-left">{project.desc}</p>
                     <div className='flex justify-between items-center gap-3 '>
-                        <a href={project.gihubLink} target='_blank' className='bg-[#25263A] px-4 sm:px-8 border hover:bg-[#ff5823] py-3 rounded-3xl font-medium transition-all delay-75'>Github</a>
-                        <a href={project.liveLink} target='_blank' className='bg-[#ff5823] px-4 lg:px-8 py-3 rounded-3xl text-white font-medium hover:bg-[#25263A] hover:text-white transition-all delay-75 '>Preview</a>
+                      <a href={project.gihubLink} target='_blank' className='bg-[#25263A] px-4 sm:px-8 border hover:bg-[#ff5823] py-3 rounded-3xl font-medium transition-all delay-75'>Github</a>
+                      <a href={project.liveLink} target='_blank' className='bg-[#ff5823] px-4 lg:px-8 py-3 rounded-3xl text-white font-medium hover:bg-[#25263A] hover:text-white transition-all delay-75 '>Preview</a>
                     </div>
                   </div>
                 </div>

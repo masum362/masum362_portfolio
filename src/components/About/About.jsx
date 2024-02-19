@@ -70,7 +70,7 @@ const About = () => {
         <h1 className='text-center text-3xl font-bold '>About Myself</h1>
         <hr className=' lg:w-[40%] text-center m-auto mt-2' />
 
-        <p className='w-[90%] lg:w-[80%] m-auto text-start  mt-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, itaque consectetur porro illum dolor magni numquam quidem doloremque odio eum recusandae veniam nihil id nemo quisquam corporis necessitatibus sunt voluptatibus quae assumenda molestiae ex. Alias architecto, accusantium quo natus consectetur a beatae ratione sapiente ipsam aliquid quam consequuntur animi saepe dolorum quibusdam ea amet aliquam id sunt sed reiciendis. Vitae, enim! Iure fuga</p>
+        <p className='w-[90%] lg:w-[80%] m-auto text-start  mt-5'>Hello, I'm Md. Masum Ahmed, a dynamic and enthusiastic individual currently based in the vibrant country of Bangladesh. I am passionate about technology and thrive on building innovative solutions. As a skilled Full Stack Web Developer, I enjoy bringing ideas to life through coding and design. Excited to contribute to the world of technology and make a positive impact.</p>
       </motion.div>
 
 
