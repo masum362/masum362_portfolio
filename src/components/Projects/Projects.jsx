@@ -4,6 +4,8 @@ import item1 from '../../assets/amazon-clone-website.png'
 import item2 from '../../assets/amar-cokh-website.png'
 import item3 from '../../assets/nexcent-website.png'
 import item4 from '../../assets/mindlinker thumbnail.png'
+import item5 from '../../assets/academy-cloud-thumbnail.png'
+import item6 from '../../assets/favtech-thumbnail.png'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
@@ -39,6 +41,24 @@ const Projects = () => {
       category: 'e commerce',
       gihubLink: "https://github.com/masum362/MINDLINKER_social_media",
       liveLink: "https://mindlinker.netlify.app/",
+    },
+    {
+      id: 5,
+      name: "AcademyCloud Your Library",
+      desc: "Our platform boasts an extensive collection of books spanning various genres, subjects, and age groups.Our intuitive book borrowing process ensures that you can find, reserve, and check out your desired books with just a few clicks. anyone can add a book and also borrow a book ",
+      img: item5,
+      category: 'education',
+      gihubLink: "https://github.com/masum362/academyCloud",
+      liveLink: "https://academycloud-6112d.web.app/",
+    },
+    {
+      id: 6,
+      name: "FavTech Product Hunt",
+      desc: "Join our vibrant community of innovators and early adopters. Explore, upvote, and support the latest products and groundbreaking ideas shaping the future.add your product in our website and promote it freely. Your next favorite discovery is just a click away!",
+      img: item6,
+      category: 'technology',
+      gihubLink: "https://github.com/masum362/favtech-client",
+      liveLink: "https://producthunt-lite.web.app/",
     },
     {
       id: 1,
@@ -102,8 +122,8 @@ const Projects = () => {
 
           {
             Projects.map(project => {
-              return <div>
-                <div key={project.id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-[95%]">
+              return <div key={project.id} >
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-[95%]">
                   <a >
                     <img className="rounded-t-lg" src={project.img} alt="" />
                   </a>

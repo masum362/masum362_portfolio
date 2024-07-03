@@ -13,7 +13,7 @@ import Particls from '../particles/Particles'
 const Home = () => {
   
   return (
-    <div className='home-container flex flex-col justify-between m-auto w-[95%]'>
+    <div className='flex flex-col justify-between'>
  
     
       <Profile />

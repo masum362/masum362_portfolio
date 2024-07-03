@@ -11,7 +11,7 @@ const Header = () => {
    // <h1 className='font-bold text-2xl cursor-pointer text-[#ff5823] '>PortFolio</h1>
 
     return (
-        <div className='fixed w-[95%] mx-auto z-20  flex items-center  justify-between px-3 lg:py-3 bg-[#25263A]  text-white transition-all ease-in delay-500'>
+        <div className='sticky top-0   mx-auto z-20  flex items-center  justify-between px-3 lg:py-3 bg-[#25263A]  text-white transition-all ease-in delay-500 '>
             <div className="logo w-1/4px-3">
                 <img src={logo} className='w-16 object-contain cursor-pointer' />
                
