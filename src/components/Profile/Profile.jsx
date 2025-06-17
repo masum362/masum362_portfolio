@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 // import Typical from 'react-typical'
 
-import img from "../../assets/masum profile.jpg"
+import img from "../../assets/masum-profile.png"
 import { FaFacebook, FaSquareInstagram, FaSquareTwitter, FaYoutube } from 'react-icons/fa6'
 import { Cursor, Typewriter } from 'react-simple-typewriter';
 import Particls from '../../particles/Particles';
 import { Link } from 'react-router-dom';
 import pdf from "../../assets/masum-resume.pdf"
+
 
 const Profile = () => {
 
@@ -31,12 +32,12 @@ const Profile = () => {
                     
                 </div>
                 <div className='text-white flex flex-col items-center justify-center gap-3 '>
-                    <span className='font-bold text-2xl'>Hello, I'M <span className='text-[#ff5823]'>Masum</span></span>
+                    <span className='font-bold text-2xl'>Hello, I'M <span className='text-[#ff5823]'>Masum Ahmed</span></span>
 
                     <div className="container flex justify-center items-center ">
 
-                        <span className='text first-text text-3xl lg:text-5xl font-medium '>I'm a <span className='text-[#ff5823]'><Typewriter
-                            words={["Youtuber", "Designer", "Developer", "Freelancer"]}
+                        <span className='text first-text text-xl sm:text-3xl lg:text-5xl font-medium '>I'm a <span className='text-[#ff5823]'><Typewriter
+                            words={["Full Stack Developer", "MERN Stack Developer", "Web Designer"]}
                             loop={Infinity}
 
                             cursorStyle='_'
@@ -53,7 +54,7 @@ const Profile = () => {
                     <p className='lg:text-xl text-center'>Knack of of building applications with front and back end operations</p>
                     <div className='flex justify-between items-center gap-3 '>
                       <Link to={'mailto:masumahmed64077@gmail.com'}>
-                      <button className='bg-transparent px-4 sm:px-8 border hover:border-[#ff5823] py-3 rounded-3xl font-medium transition-all delay-75'>Hire Me</button>
+                      <button className='bg-transparent px-4 sm:px-8 border hover:border-[#ff5823] py-3 rounded-3xl font-medium transition-all delay-75'>Contact</button>
                       </Link>
 
                       <a href={pdf}>  <button className='bg-transparent px-4 lg:px-8 py-3 rounded-3xl text-[#ff5823] font-medium hover:bg-[#ff5823] hover:text-white transition-all delay-75 '>Get Resume</button></a>

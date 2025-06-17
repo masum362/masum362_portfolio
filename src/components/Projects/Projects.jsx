@@ -101,9 +101,9 @@ const Projects = () => {
         <h1 className='font-bold text-3xl p-2 '>Recent Projects</h1>
         <p className='p-2 font-thin'>Revolutionizing Web Development: Introducing with my some of recent projects, where innovation meets excellence.</p>
       </div>
-      <div className="projects mx-auto  gap-3 w-[100%] lg:w-[90%] text-center p-3 transition-all duration-300 ">
+       <div className="projects mx-auto  gap-3 w-[100%] lg:w-[90%] text-center p-3 transition-all duration-300 ">
 
-        <Carousel
+       <Carousel
           swipeable={true}
           draggable={false}
           showDots={true}
@@ -142,6 +142,7 @@ const Projects = () => {
             })
           }
         </Carousel>
+        
 
       </div>
     </div>
