@@ -1,30 +1,50 @@
-import React from 'react'
-import Profile from '../components/Profile/Profile'
-import Footer from '../components/Footer/Footer'
-import About from '../components/About/About'
-import Work from '../components/Work/Work'
-import Projects from '../components/Projects/Projects'
-import FAQs from '../components/FAQs/FAQs'
-import Contact from '../components/Contact/Contact'
-import Particls from '../particles/Particles'
+import React from "react";
 
-// import './Home.css'
+import Profile from "../components/Profile/Profile";
+import About from "../components/About/About";
+import Work from "../components/Work/Work";
+import Projects from "../components/Projects/Projects";
+import FAQs from "../components/FAQs/FAQs";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
-  
   return (
-    <div className='flex flex-col justify-between'>
- 
-    
-      <Profile />
-      <About />
-      <Work />
-      <Projects />
-      <FAQs />
-      <Contact />
-      {/* <Footer />  */}
-    </div>
-  )
-}
+    <main className="min-h-screen overflow-hidden bg-[#25263b]">
 
-export default Home
+      {/* Hero */}
+      <section id="home">
+        <Profile />
+      </section>
+
+      {/* About */}
+      <section>
+        <About />
+      </section>
+
+      {/* Services */}
+      <section>
+        <Work />
+      </section>
+
+      {/* Projects */}
+      <section>
+        <Projects />
+      </section>
+
+      {/* FAQ */}
+      <section>
+        <FAQs />
+      </section>
+
+      {/* Contact */}
+      <section>
+        <Contact />
+      </section>
+
+     
+    </main>
+  );
+};
+
+export default Home;

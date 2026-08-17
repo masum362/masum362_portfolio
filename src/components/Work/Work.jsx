@@ -1,30 +1,195 @@
-import React from 'react'
-import { FaPencil, FaGlobe, FaGear } from 'react-icons/fa6'
+import React from "react";
+import { FaPencil, FaGlobe, FaGear, FaArrowRight } from "react-icons/fa6";
 
 const Work = () => {
-    return (
-        <div id='services' className='w-full mt-10 py-10 relative mx-auto  '>
-            <div className='relative'>
-                <img className='w-[90%] object-cover m-auto h-96 drop-shadow-md blur-[5px] rounded-lg' src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80 " alt="What can i do for you" />
-                <h1 className='text-2xl md:text-4xl absolute top-[40%] w-full mx-auto text-center  xl:top-[40%] text-white font-bold  '>This Is What Can I Do For You</h1>
-            </div>
-            <div className="works   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full  md:w-[80%] mx-auto gap-5 md:absolute md:top-[60%] md:left-[15%] md:mb-20 ">
+  const services = [
+    {
+      id: 1,
+      icon: <FaPencil />,
+      title: "Design",
+      description:
+        "I create clean, modern, and user-friendly interfaces where every element has a purpose. My focus is on creating seamless user journeys that combine aesthetics with usability.",
+      technologies: ["UI/UX", "Figma", "Responsive Design"],
+    },
+    {
+      id: 2,
+      icon: <FaGlobe />,
+      title: "Development",
+      description:
+        "I transform ideas and designs into fast, responsive, and scalable web applications using modern frontend and backend technologies.",
+      technologies: ["React", "Node.js", "MongoDB"],
+    },
+    {
+      id: 3,
+      icon: <FaGear />,
+      title: "Maintenance",
+      description:
+        "I keep websites and applications reliable, secure, and up to date. From fixing bugs to improving performance, I make sure your project keeps running smoothly.",
+      technologies: ["Bug Fixing", "Optimization", "Updates"],
+    },
+  ];
 
-                <div className='bg-white p-2 m-2 rounded-lg flex flex-col items-center justify-center text-center'>
-                    <h1 className='p-2 font-bold text-xl text-[#ff5823]'>Design</h1>
-                    <p className='p-2 font-thin text-lg  '>Welcome to my digital canvas.Explore seamless user journeys, where every pixel tells a story. Join me in crafting experiences where innovation meets elegance. Let the design speak, and let's embark on a journey where form and function coalesce seamlessly.</p>
-                </div>
-                <div className='bg-white p-2 m-2 rounded-lg flex flex-col items-center justify-center text-center'>
-                    <h1 className='p-2 font-bold text-xl text-[#ff5823]'>Development</h1>
-                    <p className='p-2 font-thin text-lg  '>sculpting lines of code into dynamic experiences. Here, innovation meets functionality, and every keystroke shapes a seamless user journey,where the virtual world comes to life with purpose and precision.</p>
-                </div>
-                <div className='bg-white p-2 m-2 rounded-lg flex flex-col items-center justify-center text-center'>
-                    <h1 className='p-2 font-bold text-xl text-[#ff5823]'>Maintainance</h1>
-                    <p className='p-2 font-thin text-lg  '>Explore worry-free online experiences with my commitment to keeping every pixel pristine and every line of code robust. Let's elevate your web presence together, ensuring it thrives with reliability and longevity.</p>
-                </div>
-            </div>
+  return (
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#25263b] px-5 py-24 text-white md:px-10 lg:px-16"
+    >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-orange-500/10 blur-[130px]" />
+
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-orange-500/10 blur-[130px]" />
+
+      <div className="relative mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-orange-500">
+            What I Do
+          </p>
+
+          <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+            Services I Can{" "}
+            <span className="text-orange-500">Provide</span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-400 md:text-base">
+            From creating beautiful interfaces to developing powerful web
+            applications, I help turn ideas into reliable digital
+            experiences.
+          </p>
         </div>
-    )
-}
 
-export default Work
+        {/* Services */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/[0.04]
+                p-7
+                backdrop-blur-md
+                transition-all
+                duration-500
+                hover:-translate-y-3
+                hover:border-orange-500/40
+                hover:bg-white/[0.06]
+                hover:shadow-[0_25px_70px_rgba(249,115,22,0.12)]
+              "
+            >
+              {/* Card Glow */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  -right-16
+                  -top-16
+                  h-32
+                  w-32
+                  rounded-full
+                  bg-orange-500/10
+                  blur-3xl
+                  transition-all
+                  duration-500
+                  group-hover:bg-orange-500/20
+                "
+              />
+
+              {/* Number */}
+              <span className="absolute right-6 top-5 text-5xl font-bold text-white/[0.04]">
+                0{service.id}
+              </span>
+
+              {/* Icon */}
+              <div
+                className="
+                  relative
+                  mb-7
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-xl
+                  border
+                  border-orange-500/20
+                  bg-orange-500/10
+                  text-xl
+                  text-orange-500
+                  transition-all
+                  duration-300
+                  group-hover:border-orange-500
+                  group-hover:bg-orange-500
+                  group-hover:text-white
+                "
+              >
+                {service.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="relative mb-4 text-2xl font-bold transition-colors duration-300 group-hover:text-orange-500">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p className="relative min-h-[125px] text-sm leading-7 text-gray-400">
+                {service.description}
+              </p>
+
+              {/* Technologies */}
+              <div className="relative mt-6 flex flex-wrap gap-2">
+                {service.technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="
+                      rounded-full
+                      border
+                      border-white/10
+                      bg-white/[0.04]
+                      px-3
+                      py-1.5
+                      text-xs
+                      text-gray-400
+                      transition-colors
+                      duration-300
+                      group-hover:border-orange-500/20
+                    "
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+
+              {/* Bottom Link */}
+              <div className="relative mt-7 border-t border-white/10 pt-5">
+                <button
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    text-sm
+                    font-semibold
+                    text-gray-300
+                    transition-all
+                    duration-300
+                    group-hover:gap-3
+                    group-hover:text-orange-500
+                  "
+                >
+                  Learn More
+                  <FaArrowRight className="text-xs" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Work;

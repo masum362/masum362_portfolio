@@ -1,98 +1,480 @@
-import React, { useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { SiGmail } from 'react-icons/si';
-import { FaPhone, FaAddressBook } from 'react-icons/fa6';
-import emailjs from '@emailjs/browser';
-import Swal from 'sweetalert2';
+import React, { useRef } from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaLocationDot,
+  FaArrowRight,
+} from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const form = useRef();
 
-    const form = useRef();
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        emailjs
-            .sendForm('service_mhlta1v', 'template_3ud0meq', form.current, {
-                publicKey: 'KyO7_OmJay_Y6syw-',
-            })
-            .then(
-                (result) => {
-                    Swal.fire({
-                        title: "Success",
-                        text: "Successfully sent message",
-                        icon: "success"
-                    });
-                },
-                (error) => {
-                    console.log('FAILED...', error);
-                },
-            );
-    };
+    emailjs
+      .sendForm(
+        "service_mhlta1v",
+        "template_3ud0meq",
+        form.current,
+        {
+          publicKey: "KyO7_OmJay_Y6syw-",
+        }
+      )
+      .then(
+        () => {
+          Swal.fire({
+            title: "Message Sent!",
+            text: "Thank you for reaching out. I'll get back to you soon.",
+            icon: "success",
+          });
 
+          form.current.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error);
 
-    return (
-        <div id='contact' className='flex flex-col md:flex-row items-center justify-between w-[90%] m-auto mt-16 lg:mt-10'>
-            <div className=' w-full lg:w-1/2 text-white flex flex-col justify-center items-start p-3 gap-3'>
-                <h4 className='lg:p-3 md:p-0 lg:ml-8 text-lg font-medium text-[#ff5823]'>Get In Touch</h4>
-                <h1 className='lg:p-3 lg:ml-8 text-3xl lg:text-4xl font-bold capitalize'>let's talk about your project.</h1>
+          Swal.fire({
+            title: "Something went wrong",
+            text: "Please try again later.",
+            icon: "error",
+          });
+        }
+      );
+  };
 
-            </div>
-            <div className=' p-3 w-full flex flex-col items-start justify-center md:w-1/2 gap-3 lg:px-14'>
-                {/* <div className='flex items-center justify-center gap-3 my-3'>
-                    <div className='p-2 lg:p-3 rounded-full bg-[#ff5823] text-white'>
-                        <SiGmail className='text-3xl ' />
-                    </div>
-                    <div className='text-white flex flex-col '>
-                        <h1 className='capitalize text-lg lg:text-xl font-medium'>email me:</h1>
-                        <p className='font-thin text-lg'>masumahmed64077@gmail.com</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-3 my-3'>
-                    <div className='p-2 lg:p-3 rounded-full bg-[#ff5823] text-white'>
-                        <FaPhone className='text-3xl ' />
-                    </div>
-                    <div className='text-white'>
-                        <h1 className='capitalize text-lg lg:text-xl font-medium'>Phone me:</h1>
-                        <p className='font-thin text-lg'>+8801775994314</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-3 my-3'>
-                    <div className='p-2 lg:p-3 rounded-full bg-[#ff5823] text-white'>
-                        <FaAddressBook className='text-3xl ' />
-                    </div>
-                    <div className='text-white'>
-                        <h1 className='capitalize text-lg lg:text-xl font-medium'>Address:</h1>
-                        <p className='font-thin text-lg'>Sylhet,Bangladesh.</p>
-                    </div>
-                </div> */}
+  return (
+    <section
+      id="contact"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#25263b]
+        px-4
+        py-20
+        text-white
+        sm:px-6
+        md:px-8
+        lg:px-10
+        xl:px-12
+      "
+    >
+      {/* Background Glow */}
 
-                <form ref={form} onSubmit={sendEmail} className='flex flex-col items-start gap-4 w-full '>
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-40
+          top-20
+          h-72
+          w-72
+          rounded-full
+          bg-orange-500/10
+          blur-[120px]
+        "
+      />
 
-                    <div className='w-full space-y-2'>
-                        <label className="input input-bordered flex items-center gap-2 w-full text-white font-semibold"  >
-                            Name
-                        </label>
-                        <input type="text" name="user_name" className="input input-bordered w-full max-w-full p-2" placeholder="Name" required />
-                    </div>
-                    <div className='w-full space-y-2'>
-                        <label className="input input-bordered flex items-center gap-2 w-full text-white font-semibold"  >
-                            Email
-                        </label>
-                        <input type="email" name="user_email" className="input input-bordered w-full max-w-full p-2" placeholder="Email" required />
-                    </div>
-                    <div className='w-full flex flex-col  gap-2'>
-                        <label className='text-white font-semibold'>Message</label>
-                        <textarea
-                            placeholder="message"
-                            name="message"
-                            className="textarea textarea-bordered textarea-lg w-full max-w-full p-2" required></textarea>
-                    </div>
-                    <button type='submit' className='btn bg-[#ff5823] hover:bg-[#eb643f] duration-150 text-white p-2 rounded-lg font-bold w-full'>Send message</button>
-                </form>
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-40
+          bottom-10
+          h-72
+          w-72
+          rounded-full
+          bg-orange-500/10
+          blur-[120px]
+        "
+      />
 
-            </div>
+      <div className="relative mx-auto w-full max-w-6xl">
+
+        {/* =================================
+            HEADING
+        ================================= */}
+
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500 sm:text-sm">
+            Get In Touch
+          </p>
+
+          <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+            Let's Talk About{" "}
+            <span className="text-orange-500">
+              Your Project
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
+            Have an idea or a project in mind? Feel free to
+            reach out. I'd love to hear from you and discuss
+            how I can help.
+          </p>
         </div>
-    )
-}
 
-export default Contact
+        {/* =================================
+            CONTENT
+        ================================= */}
+
+        <div className="grid w-full min-w-0 grid-cols-1 gap-6 lg:grid-cols-2">
+
+          {/* =================================
+              CONTACT INFO
+          ================================= */}
+
+          <div
+            className="
+              min-w-0
+              rounded-2xl
+              border
+              border-white/10
+              bg-white/[0.04]
+              p-5
+              sm:p-7
+              lg:p-8
+            "
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+              Contact Information
+            </p>
+
+            <h3 className="mt-2 text-2xl font-bold sm:text-3xl">
+              Let's start a conversation.
+            </h3>
+
+            <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
+              I'm always open to discussing new projects,
+              creative ideas or opportunities to be part of
+              your vision.
+            </p>
+
+            {/* Contact Items */}
+
+            <div className="mt-8 space-y-4">
+
+              {/* Email */}
+
+              <a
+                href="mailto:masumahmed64077@gmail.com"
+                className="
+                  flex
+                  min-w-0
+                  items-center
+                  gap-4
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  p-4
+                  transition-all
+                  duration-300
+                  hover:border-orange-500/30
+                  hover:bg-orange-500/5
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-orange-500/10
+                    text-orange-500
+                  "
+                >
+                  <FaEnvelope />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-xs text-gray-500">
+                    Email
+                  </p>
+
+                  <p
+                    className="
+                      mt-1
+                      break-all
+                      text-sm
+                      font-medium
+                      text-gray-200
+                      sm:text-base
+                    "
+                  >
+                    masumahmed64077@gmail.com
+                  </p>
+                </div>
+              </a>
+
+              {/* Phone */}
+
+              <a
+                href="tel:+8801775994314"
+                className="
+                  flex
+                  min-w-0
+                  items-center
+                  gap-4
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  p-4
+                  transition-all
+                  duration-300
+                  hover:border-orange-500/30
+                  hover:bg-orange-500/5
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-orange-500/10
+                    text-orange-500
+                  "
+                >
+                  <FaPhone />
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500">
+                    Phone
+                  </p>
+
+                  <p className="mt-1 text-sm font-medium text-gray-200 sm:text-base">
+                    +880 1775-994314
+                  </p>
+                </div>
+              </a>
+
+              {/* Location */}
+
+              <div
+                className="
+                  flex
+                  min-w-0
+                  items-center
+                  gap-4
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  p-4
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-orange-500/10
+                    text-orange-500
+                  "
+                >
+                  <FaLocationDot />
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500">
+                    Location
+                  </p>
+
+                  <p className="mt-1 text-sm font-medium text-gray-200 sm:text-base">
+                    Sylhet, Bangladesh
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* =================================
+              FORM
+          ================================= */}
+
+          <div
+            className="
+              min-w-0
+              rounded-2xl
+              border
+              border-white/10
+              bg-white/[0.04]
+              p-5
+              sm:p-7
+              lg:p-8
+            "
+          >
+            <div className="mb-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+                Send a Message
+              </p>
+
+              <h3 className="mt-2 text-2xl font-bold">
+                Tell me about your project
+              </h3>
+            </div>
+
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="flex w-full flex-col gap-5"
+            >
+
+              {/* Name */}
+
+              <div className="w-full">
+                <label className="mb-2 block text-sm font-medium text-gray-300">
+                  Your Name
+                </label>
+
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder="Enter your name"
+                  required
+                  className="
+                    w-full
+                    min-w-0
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    px-4
+                    py-3
+                    text-sm
+                    text-white
+                    outline-none
+                    placeholder:text-gray-600
+                    transition
+                    focus:border-orange-500/50
+                    focus:bg-white/[0.05]
+                  "
+                />
+              </div>
+
+              {/* Email */}
+
+              <div className="w-full">
+                <label className="mb-2 block text-sm font-medium text-gray-300">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="Enter your email"
+                  required
+                  className="
+                    w-full
+                    min-w-0
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    px-4
+                    py-3
+                    text-sm
+                    text-white
+                    outline-none
+                    placeholder:text-gray-600
+                    transition
+                    focus:border-orange-500/50
+                    focus:bg-white/[0.05]
+                  "
+                />
+              </div>
+
+              {/* Message */}
+
+              <div className="w-full">
+                <label className="mb-2 block text-sm font-medium text-gray-300">
+                  Message
+                </label>
+
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  required
+                  rows="5"
+                  className="
+                    w-full
+                    min-w-0
+                    resize-none
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    px-4
+                    py-3
+                    text-sm
+                    text-white
+                    outline-none
+                    placeholder:text-gray-600
+                    transition
+                    focus:border-orange-500/50
+                    focus:bg-white/[0.05]
+                  "
+                />
+              </div>
+
+              {/* Submit */}
+
+              <button
+                type="submit"
+                className="
+                  group
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  bg-orange-500
+                  px-5
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:bg-orange-600
+                  hover:shadow-[0_10px_30px_rgba(249,115,22,0.2)]
+                "
+              >
+                Send Message
+
+                <FaArrowRight
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

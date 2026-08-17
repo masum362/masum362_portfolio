@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
 
-      <div className="w-[95%] mx-auto">
+      <div className="">
         <Header />
         <Routes>
           <Route  path="/" element={<Home />} />
